@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 16:13:25 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/11/08 00:00:41 by iakyaou          ###   ########.fr       */
+/*   Created: 2022/10/23 14:45:26 by iakyaou           #+#    #+#             */
+/*   Updated: 2022/11/08 23:01:36 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t			i;
-	unsigned char	*a1;
-	unsigned char	*a2;
-
-	a1 = (unsigned char *)s1;
-	a2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if ((unsigned char)a1[i] != (unsigned char)a2[i])
-			return ((unsigned char)a1[i] - (unsigned char)a2[i]);
-		i++;
-	}
-	return (0);
+	if (!s || !fd)
+		return ;
+	write (fd, s, ft_strlen(s));
 }
+// int main()
+// {
+// 	ft_putstr_fd("ismailakyaou", 1);
+// }

@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 16:13:25 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/11/08 00:00:41 by iakyaou          ###   ########.fr       */
+/*   Created: 2022/10/12 00:31:49 by iakyaou           #+#    #+#             */
+/*   Updated: 2022/10/12 00:31:52 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-
+int	ft_isprint(int c)
 {
-	size_t			i;
-	unsigned char	*a1;
-	unsigned char	*a2;
-
-	a1 = (unsigned char *)s1;
-	a2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if ((unsigned char)a1[i] != (unsigned char)a2[i])
-			return ((unsigned char)a1[i] - (unsigned char)a2[i]);
-		i++;
-	}
+	if ((c >= 32) && (c <= 126))
+		return (1);
 	return (0);
 }

@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 16:13:25 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/11/08 00:00:41 by iakyaou          ###   ########.fr       */
+/*   Created: 2022/10/17 21:47:38 by iakyaou           #+#    #+#             */
+/*   Updated: 2022/11/06 22:17:58 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+void	*ft_calloc(size_t nelem, size_t elsize)
 
 {
-	size_t			i;
-	unsigned char	*a1;
-	unsigned char	*a2;
+	void	*str;
 
-	a1 = (unsigned char *)s1;
-	a2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	str = malloc(nelem * elsize);
+	if (!str)
+		return (NULL);
+	if (str)
 	{
-		if ((unsigned char)a1[i] != (unsigned char)a2[i])
-			return ((unsigned char)a1[i] - (unsigned char)a2[i]);
-		i++;
+		ft_memset(str, 0, nelem * elsize);
 	}
-	return (0);
+	return (str);
 }

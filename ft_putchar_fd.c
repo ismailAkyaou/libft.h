@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 16:13:25 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/11/08 00:00:41 by iakyaou          ###   ########.fr       */
+/*   Created: 2022/10/23 14:36:57 by iakyaou           #+#    #+#             */
+/*   Updated: 2022/11/08 21:52:24 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t			i;
-	unsigned char	*a1;
-	unsigned char	*a2;
-
-	a1 = (unsigned char *)s1;
-	a2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
-	{
-		if ((unsigned char)a1[i] != (unsigned char)a2[i])
-			return ((unsigned char)a1[i] - (unsigned char)a2[i]);
-		i++;
-	}
-	return (0);
+	write(fd, &c, 1);
 }
+// int main()
+// {
+// 	char str[] = "hello world";
+// 	int fd = open("file.txt", O_CREAT | O_RDONLY | O_WRONLY);
+// 	write(fd, str, ft_strlen(str));
+// }

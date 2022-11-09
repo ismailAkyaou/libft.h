@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 16:13:25 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/11/08 00:00:41 by iakyaou          ###   ########.fr       */
+/*   Created: 2022/10/23 13:18:45 by iakyaou           #+#    #+#             */
+/*   Updated: 2022/11/08 23:14:45 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
-
+void	ft_striteri(char *s, void (*f) (unsigned int, char*))
 {
-	size_t			i;
-	unsigned char	*a1;
-	unsigned char	*a2;
+	int	i;
 
-	a1 = (unsigned char *)s1;
-	a2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	if (s && f)
 	{
-		if ((unsigned char)a1[i] != (unsigned char)a2[i])
-			return ((unsigned char)a1[i] - (unsigned char)a2[i]);
-		i++;
+		while (s[i] != '\0')
+		{
+			f(i, &s[i]);
+			i++;
+		}
 	}
-	return (0);
 }
+// void ft_ismail(unsigned int i, char *s1)
+// {
+// 	printf("i = %u\n", i);
+// }
+// int main()
+// {
+// 	char str[] = "ABCDEF";
+// 	ft_striteri(str, ft_ismail);
+// }

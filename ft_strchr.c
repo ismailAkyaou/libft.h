@@ -6,32 +6,28 @@
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:10:26 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/10/13 19:10:28 by iakyaou          ###   ########.fr       */
+/*   Updated: 2022/11/08 23:05:16 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-char    *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s[i] != '\0' && s[i] != c)
-    {
-       i++;
-    }
-    if (s[i] == c)
-    {
-        return (char *)s + i;
-    }
-    return 0;
+	i = 0;
+	while (s[i] != '\0' && s[i] != (char)c)
+	{
+		i++;
+	}
+	if (s[i] == (char)c)
+		return ((char *)s + i);
+	return (0);
 }
-
 // int main()
 // {
-//     char h[] = "absdef";
-//     int j = 115;
-//     printf("%s", ft_strchr(h, j));
+// 	char str[] = "ismailakyaou";
+// 	char s = 'l';
+// 	printf("%s", ft_strchr(str, s));
 // }

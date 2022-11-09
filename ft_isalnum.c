@@ -6,23 +6,15 @@
 /*   By: iakyaou <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 20:52:12 by iakyaou           #+#    #+#             */
-/*   Updated: 2022/10/11 20:52:14 by iakyaou          ###   ########.fr       */
+/*   Updated: 2022/11/06 16:06:52 by iakyaou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalnum(int c)
+int	ft_isalnum(int c)
 {
-    if (ft_isalpha(c) || ft_isdigit(c))
-        return 1;
-    return 0;
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	return (0);
 }
-//int main()
-
-//{
-//    char k;
-//    k = '+';
-//    printf("%d", ft_isalnum(k));
-//}
-
